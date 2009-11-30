@@ -1,0 +1,11 @@
+Package: NameNeedle
+Title: Using Needleman-Wunsch to Match Sample Names
+Version: 1.0.0
+Date: 2009-11-18
+Author: Kevin R. Coombes
+Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
+Description: .
+License: GPL Version 2 or newer
+Depends: R (>= 2.9), stats
+URL: http://bioinformatics.mdanderson.org/Software/OOMPA
+LazyLoad: yes

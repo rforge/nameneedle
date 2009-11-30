@@ -1,0 +1,8 @@
+export("needles")
+export("needleScores")
+export("defaultNeedleParams")
+
+# importFrom(pkg, function, ...)
+# importMethodsFrom(pkg, method, ...)
+# exportMethods(...)
+# expoertClasses(...)

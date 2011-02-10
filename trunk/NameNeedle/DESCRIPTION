@@ -7,6 +7,6 @@ Maintainer: Kevin R. Coombes <kcoombes@mdanderson.org>
 Description: Using Needleman-Wunsch to Match Sample Names
 Depends: R (>= 2.10), stats
 License: GPL (>= 2)
-URL: http://bioinformatics.mdanderson.org/Software/OOMPA
 LazyLoad: yes
+URL: http://bioinformatics.mdanderson.org/Software/OOMPA
 

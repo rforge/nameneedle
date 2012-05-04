@@ -1,5 +1,14 @@
-defaultNeedleParams <- list(MATCH = 1, MISMATCH = -1, GAP = -1, GAPCHAR = "*")
+###
+### NEEDLES.R
+###
 
+defaultNeedleParams <- list(MATCH=1,
+                            MISMATCH=-1,
+                            GAP=-1,
+                            GAPCHAR="*")
+
+
+##-----------------------------------------------------------------------------
 needles <- function(pattern, subject, params=defaultNeedleParams) {
   MATCH <- params$MATCH
   MISMATCH <- params$MISMATCH
@@ -8,7 +17,7 @@ needles <- function(pattern, subject, params=defaultNeedleParams) {
   
   patt <- strsplit(pattern, "")[[1]]
   subj <- strsplit(subject, "")[[1]]
-  # initialize
+  ## Initialize
   scoreMatrix <- matrix(NA,     ncol=1+length(patt), nrow=1+length(subj))
   direcMatrix <- matrix("none", ncol=1+length(patt), nrow=1+length(subj))
   scoreMatrix[1,1] <- 0
@@ -21,13 +30,13 @@ needles <- function(pattern, subject, params=defaultNeedleParams) {
     direcMatrix[i+1,1] <- "up"
   }
 
-  # fill
+  ## Fill
   for (i in 1:length(subj)) {
     for (j in 1:length(patt)) {
-      # translating from 0-based arrays and vectors to 1-based
+      ## Translating from 0-based arrays and vectors to 1-based
       I <- i + 1
       J <- j + 1
-      # calculate (mis)match scores
+      ## Calculate (mis)match scores
       letter1 <- patt[J-1]
       letter2 <- subj[I-1]
       if(letter1 == letter2) {
@@ -35,10 +44,10 @@ needles <- function(pattern, subject, params=defaultNeedleParams) {
       } else {
         diagonalScore <- scoreMatrix[I-1, J-1] + MISMATCH
       }
-      # calculate gap scores
+      ## Calculate gap scores
       upScore   <- scoreMatrix[I-1, J] + GAP
       leftScore <- scoreMatrix[I, J-1] + GAP
-      # choose best score
+      ## Choose best score
       if (diagonalScore >= upScore) {
         if (diagonalScore >= leftScore) {
           scoreMatrix[I, J] <- diagonalScore
@@ -60,7 +69,7 @@ needles <- function(pattern, subject, params=defaultNeedleParams) {
   }
   theScore <- scoreMatrix[I, J]
 
-  # backtrace
+  ## backtrace
   J <- length(patt)+1
   I <- length(subj)+1
   align1 <- align2 <- c()
@@ -87,16 +96,21 @@ needles <- function(pattern, subject, params=defaultNeedleParams) {
     }
   }
   list(score=theScore,
-    align1=paste(align1, collapse=''),
-    align2=paste(align2, collapse=''),
-    sm=scoreMatrix, dm=direcMatrix)
+       align1=paste(align1, collapse=''),
+       align2=paste(align2, collapse=''),
+       sm=scoreMatrix,
+       dm=direcMatrix)
 }
 
 
+##-----------------------------------------------------------------------------
 needleScores <- function(pattern, subjects, params=defaultNeedleParams) {
-  scores <- sapply(subjects, function(x, y, p) {
-    needles(x, y, p)$score
-  }, y=pattern, p=params)
-  scores
+    scores <- sapply(subjects,
+                     function(x, y, p) {
+                         needles(x, y, p)$score
+                     },
+                     y=pattern,
+                     p=params)
+    scores
 }
-  
+

@@ -6,6 +6,13 @@
 	**************************************************
 
 
+		CHANGES IN R VERSION 1.1.2
+
+BUG FIXES
+
+    o	Made compatible with new R check steps that verify DESCRIPTION
+        and NAMESPACE dependencies.
+
 		CHANGES IN R VERSION 1.1.1
 
 NEW FEATURES
@@ -24,13 +31,6 @@ NEW FEATURES
     o	Reorganized package structure to match current standards.
 
     o	Created package unit test.
-
-
-	**************************************************
-	*						 *
-	*	       1.0 SERIES NEWS			 *
-	*						 *
-	**************************************************
 
 
 		CHANGES IN R VERSION 1.0.0

@@ -59,6 +59,11 @@ defaultNeedleParams
   Korf I, Yandell M, Bedell J.\cr
   \emph{BLAST.}\cr
   O'Reilly Media, 2003.
+
+  Wang J, Byers LA, Yordy JS, Liu W, Shen L, Baggerly KA, Giri U, Myers
+  JN, Ang KK, Story MD, Girard L, Minna JD, Heymach JV, Coombes KR.\cr
+  \emph{Blasted cell line names.}\cr
+  Cancer Inform. 2010; 9:251--5.
 }
 \author{
   Kevin R. Coombes \email{krc@silicovore.com},

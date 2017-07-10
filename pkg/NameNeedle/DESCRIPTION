@@ -1,10 +1,12 @@
 Package: NameNeedle
-Version: 1.2.0
-Date: 2014-11-14
-Title: NameNeedle package
+Version: 1.2.1
+Date: 2017-07-10
+Title: Using Needleman-Wunsch to Match Sample Names
 Author: Kevin R. Coombes
 Maintainer: Kevin R. Coombes <krc@silicovore.com>
-Description: Using Needleman-Wunsch to Match Sample Names
+Description: The Needelman-Wunsch global alignment algorithm can be
+  used to find approximate matches between sample names in different
+  data sets.
 Depends: R (>= 3.0)
 Imports: stats
 Suggests: Biostrings

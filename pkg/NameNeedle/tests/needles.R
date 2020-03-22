@@ -55,7 +55,8 @@ illuMatch <- sapply(imatchcode,
 matcher <- data.frame(rppaMatch=rppaMatch,
                       rppaScore=matchscore,
                       illuMatch=illuMatch,
-                      illuScore=imatchscore)
+                      illuScore=imatchscore,
+                      stringsAsFactors = TRUE)
 
 ## Save results to disk (uncomment iff code changed)
 prevResults.filename <- "namesMatched.tsv"
